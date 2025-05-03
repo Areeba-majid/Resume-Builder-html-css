@@ -1,0 +1,1 @@
+This Resume Builder is a web application that allows users to create professional resumes quickly and easily. The project is built with HTML, CSS, and JavaScript, providing a responsive interface that works on both desktop and mobile devices.
