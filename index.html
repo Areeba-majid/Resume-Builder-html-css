@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Resume Builder</h1>
+            <p>Create a professional resume in minutes</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="app-container">
+            <div class="form-section">
+                <h2>Personal Information</h2>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" placeholder="Areeba">
+                </div>
+                <div class="form-group">
+                    <label for="jobTitle">Job Title</label>
+                    <input type="text" id="jobTitle" placeholder="Software Engineer">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="areeba@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" placeholder="(123) 456-7890">
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" placeholder="123 Main St, City, Country"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="summary">Professional Summary</label>
+                    <textarea id="summary" placeholder="Brief description of your professional background and skills"></textarea>
+                </div>
+                
+                <h2>Work Experience</h2>
+                <div id="experienceContainer">
+                    <div class="section experience-item">
+                        <div class="form-group">
+                            <label for="jobTitle1">Job Title</label>
+                            <input type="text" id="jobTitle1" placeholder="Software Developer">
+                        </div>
+                        <div class="form-group">
+                            <label for="company1">Company</label>
+                            <input type="text" id="company1" placeholder="Tech Corp">
+                        </div>
+                        <div class="form-group">
+                            <label for="jobDate1">Date</label>
+                            <input type="text" id="jobDate1" placeholder="Jan 2020 - Present">
+                        </div>
+                        <div class="form-group">
+                            <label for="jobDescription1">Description</label>
+                            <textarea id="jobDescription1" placeholder="Describe your responsibilities and achievements"></textarea>
+                        </div>
+                        <button class="remove-btn" onclick="removeSection(this, 'experienceContainer')">Remove Experience</button>
+                    </div>
+                </div>
+                <button class="add-btn" onclick="addSection('experienceContainer', 'experience')">Add Experience</button>
+                
+                <h2>Education</h2>
+                <div id="educationContainer">
+                    <div class="section education-item">
+                        <div class="form-group">
+                            <label for="degree1">Degree</label>
+                            <input type="text" id="degree1" placeholder="Bachelor of Science in Computer Science">
+                        </div>
+                        <div class="form-group">
+                            <label for="institution1">Institution</label>
+                            <input type="text" id="institution1" placeholder="University of Technology">
+                        </div>
+                        <div class="form-group">
+                            <label for="educationDate1">Date</label>
+                            <input type="text" id="educationDate1" placeholder="2016 - 2020">
+                        </div>
+                        <div class="form-group">
+                            <label for="educationDescription1">Description</label>
+                            <textarea id="educationDescription1" placeholder="Any notable achievements or details"></textarea>
+                        </div>
+                        <button class="remove-btn" onclick="removeSection(this, 'educationContainer')">Remove Education</button>
+                    </div>
+                </div>
+                <button class="add-btn" onclick="addSection('educationContainer', 'education')">Add Education</button>
+                
+                <h2>Skills</h2>
+                <div id="skillsContainer">
+                    <div class="form-group">
+                        <label for="skills">List your skills (comma separated)</label>
+                        <input type="text" id="skills" placeholder="JavaScript, HTML, CSS, Project Management">
+                    </div>
+                </div>
+                
+                <button class="btn-success" onclick="updateResume()">Generate Resume</button>
+            </div>
+            
+            <div class="preview-section">
+                <h2>Resume Preview</h2>
+                <div id="resumePreview" class="resume">
+                    <div class="resume-header">
+                        <h3 id="previewName">Your Name</h3>
+                        <p id="previewTitle">Your Professional Title</p>
+                        <p id="previewContact">Email: your.email@example.com | Phone: (123) 456-7890 | Address: 123 Main St, City</p>
+                    </div>
+                    
+                    <div class="resume-section">
+                        <h4>Professional Summary</h4>
+                        <p id="previewSummary">Brief description of your professional background, skills, and career objectives.</p>
+                    </div>
+                    
+                    <div class="resume-section">
+                        <h4>Work Experience</h4>
+                        <div id="previewExperience">
+                            <div class="experience-item">
+                                <h5>Job Title at Company</h5>
+                                <p class="experience-date">Month Year - Present</p>
+                                <p>Description of your responsibilities and achievements in this role.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="resume-section">
+                        <h4>Education</h4>
+                        <div id="previewEducation">
+                            <div class="education-item">
+                                <h5>Degree at Institution</h5>
+                                <p class="education-date">Year - Year</p>
+                                <p>Any notable achievements or details about your education.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="resume-section">
+                        <h4>Skills</h4>
+                        <div id="previewSkills" class="skills-list">
+                            <span class="skill-tag">Skill 1</span>
+                            <span class="skill-tag">Skill 2</span>
+                            <span class="skill-tag">Skill 3</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="download-btn btn-success" onclick="printResume()">Print Resume</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
